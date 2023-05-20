@@ -27,15 +27,50 @@
     </style>
 </head>
 <body>
-    
+    <div class="Gustavo">
+
+    </div>
     <img id="terra" src="terra.png" width="200px" class="terra">
     <img id="foguete" src="foguete.gif" width="80px" class="foguete">
-    
 </body>
 
-<script src="jquery-3.6.4.min.js"> </script>
-
+<script src="jquery-3.6.4.min.js"></script>
 <script>
+
+    var audio = new Audio('conta_regre.mp3');
+    var audio2 = new Audio('lanc_fogue.mp3');
+    var audio3 = new Audio('we-have-a-problam.mp3');
+    
+    function playAudio()
+    {
+        audio.play();
+    }
+    setTimeout(playAudio, 500)
+
+    function playAudio2()
+    {
+          audio2.play();
+    }
+    setTimeout(playAudio, 15000)
+
+    function pausarAudio()
+    {
+        audio.play();
+    }
+    setTimeout(pausarAudio, 15000)
+
+    function pausarAudio2()
+    {
+        audio2.play();
+    }
+    setTimeout(pausarAudio, 20000)
+
+    function playAudio3() 
+    {
+        audio3.play();
+    }
+    setTimeout(playAudio3, 20000)
+    
 
 data = new Date()
 tempo_inicial = data.getTime()
@@ -43,7 +78,7 @@ tempo_inicial = data.getTime()
 document.onkeydown = Pega_Tecla;
 
 function Pega_Tecla(e) 
-{	
+{	    
     e = e || window.event;
 
     tecla = e.keyCode;
@@ -53,7 +88,6 @@ function Pega_Tecla(e)
     tempo_final = data.getTime() //time em milissegundos
     
     if(tempo_final - tempo_inicial > 1000)
-    
     {
         tempo_inicial = tempo_final
         
@@ -67,7 +101,7 @@ function Pega_Tecla(e)
         }
     }
 }
-    temporizador = setTimeout(Subir,1000)
+     temporizador = setTimeout(Subir,15000)
 
     x = 760
     y = 20
@@ -76,9 +110,9 @@ function Pega_Tecla(e)
     function Subir()
     {
         topo = y + "px"
-        $("#foguete").animate({top: topo},1000)
+        $("#foguete").animate({top: topo}, 5000)
         temporizador = null
-        temporizador = setInterval(Descer,1000)
+        temporizador = setInterval(Descer, 1000)
     }
     function Descer()
     {
