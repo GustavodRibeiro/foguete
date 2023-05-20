@@ -53,9 +53,10 @@ function Pega_Tecla(e)
     tempo_final = data.getTime() //time em milissegundos
     
     if(tempo_final - tempo_inicial > 1000)
+    
     {
         tempo_inicial = tempo_final
-    
+        
         if(tecla == 37)
         {
             x = x - 20
